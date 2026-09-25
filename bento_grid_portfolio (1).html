@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carmela Mae De Leon - Virtual Assistant & eCommerce Specialist</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              900: '#0f172a',
+            },
+            bgLight: '#f6f6f4',
+            cardLight: '#ffffff',
+            borderLight: '#e4e4e0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'marquee': 'marquee 25s linear infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Custom scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.03);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 9999px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Photo stack tilt effect */
+    .photo-stack-1 { transform: rotate(-6deg) translate(-10px, 5px); }
+    .photo-stack-2 { transform: rotate(4deg) translate(8px, -4px); }
+    .photo-stack-3 { transform: rotate(-2deg); }
+
+    /* Custom Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+    }
+    .dark .glass-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-[#f6f6f4] dark:bg-[#0f172a] text-slate-800 dark:text-slate-100 font-sans min-h-screen transition-colors duration-300">
+
+  <div class="max-w-[1600px] mx-auto min-h-screen flex flex-col md:flex-row p-3 md:p-6 gap-6">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="w-full md:w-72 lg:w-80 flex-shrink-0 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-sm transition-all">
+      <div>
+        <!-- Profile Header -->
+        <div class="flex flex-col items-center text-center pb-6 border-b border-slate-100 dark:border-slate-800">
+          <div class="relative mb-4 group cursor-pointer" onclick="openModal('avatarModal')">
+            <div class="w-28 h-28 rounded-full overflow-hidden ring-4 ring-slate-100 dark:ring-slate-800 shadow-inner flex items-center justify-center bg-gradient-to-tr from-sky-200 via-indigo-100 to-amber-100 dark:from-slate-800 dark:to-indigo-950">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" 
+                   alt="Carmela Mae De Leon" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                   onerror="this.src='https://placehold.co/200x200/e2e8f0/475569?text=Carmela'">
+            </div>
+            <span class="absolute bottom-1 right-1 bg-emerald-500 w-4 h-4 rounded-full border-2 border-white dark:border-slate-900" title="Available for work"></span>
+          </div>
+
+          <h1 class="text-xl font-bold flex items-center justify-center gap-1.5 text-slate-900 dark:text-white">
+            Carmela Mae De Leon
+            <i class="fa-solid fa-circle-check text-sky-500 text-sm" title="Verified Professional"></i>
+          </h1>
+          <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">@carmeladeleon</p>
+
+          <!-- Social Icons & Theme Toggle -->
+          <div class="flex items-center gap-2.5 mt-4">
+            <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-sky-50 dark:hover:bg-sky-900/40 text-slate-600 dark:text-slate-300 hover:text-sky-600 flex items-center justify-center transition-all text-sm" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-sky-50 dark:hover:bg-sky-900/40 text-slate-600 dark:text-slate-300 hover:text-sky-600 flex items-center justify-center transition-all text-sm" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://discord.com" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/40 text-slate-600 dark:text-slate-300 hover:text-indigo-500 flex items-center justify-center transition-all text-sm" title="Discord">
+              <i class="fa-brands fa-discord"></i>
+            </a>
+            <button onclick="toggleDarkMode()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-900/40 text-slate-600 dark:text-slate-300 hover:text-amber-500 flex items-center justify-center transition-all text-sm" title="Toggle Theme">
+              <i class="fa-solid fa-moon dark:hidden"></i>
+              <i class="fa-solid fa-sun hidden dark:inline"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="mt-6 space-y-1.5" id="navContainer">
+          <button onclick="switchTab('home')" id="nav-home" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm">
+            <i class="fa-solid fa-house w-5 text-center"></i> Home
+          </button>
+          <button onclick="switchTab('projects')" id="nav-projects" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60">
+            <i class="fa-solid fa-folder-open w-5 text-center"></i> Projects
+          </button>
+          <button onclick="switchTab('services')" id="nav-services" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60">
+            <i class="fa-solid fa-layer-group w-5 text-center"></i> Services
+          </button>
+          <button onclick="switchTab('showcase')" id="nav-showcase" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60">
+            <i class="fa-solid fa-store w-5 text-center"></i> Showcase
+          </button>
+          <button onclick="switchTab('testimonials')" id="nav-testimonials" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60">
+            <i class="fa-solid fa-star w-5 text-center"></i> Testimonials
+          </button>
+          <button onclick="switchTab('about')" id="nav-about" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60">
+            <i class="fa-solid fa-user w-5 text-center"></i> About
+          </button>
+          <button onclick="switchTab('contact')" id="nav-contact" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60">
+            <i class="fa-solid fa-comments w-5 text-center"></i> FAQs / Contact
+          </button>
+        </nav>
+      </div>
+
+      <!-- Footer -->
+      <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6 flex items-center justify-between text-xs text-slate-400">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-bold text-[10px]">
+            <i class="fa-solid fa-universal-access"></i>
+          </div>
+          <span>&copy; 2026 Carmela.</span>
+        </div>
+        <span class="text-[11px] hover:underline cursor-pointer" onclick="openModal('contactModal')">Hire Me</span>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT SECTION -->
+    <main class="flex-1 flex flex-col gap-6 overflow-hidden">
+
+      <!-- TOP HEADER SECTION -->
+      <header class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 lg:p-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 shadow-sm relative overflow-hidden">
+        <!-- Background subtle glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-sky-200/40 dark:bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-2xl z-10">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+            Virtual Assistant & eCommerce Specialist
+          </h2>
+          <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm sm:text-base font-normal leading-relaxed">
+            Helping online businesses, eCommerce brands, and founders scale through automated workflows, admin ops, and high-converting digital marketing.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 z-10 w-full sm:w-auto">
+          <button onclick="openModal('contactModal')" class="w-full sm:w-auto px-6 py-3.5 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold text-sm rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group">
+            <span>Get in touch</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- DAILY DRIVERS / TOOLS MARQUEE -->
+      <section class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl py-3 px-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 overflow-hidden">
+        <div class="flex items-center gap-2 min-w-max pr-4 border-r-0 sm:border-r border-slate-200 dark:border-slate-800">
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2.5 py-1 rounded-md">DAILY DRIVERS</span>
+          <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Tools I work with</span>
+        </div>
+
+        <!-- Animated Ticker Window -->
+        <div class="w-full overflow-hidden relative">
+          <div class="flex items-center gap-3 animate-marquee whitespace-nowrap hover:[animation-play-state:paused] cursor-pointer">
+            <!-- First Set -->
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-solid fa-rocket text-sky-500"></i> GoHighLevel
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-shopify text-emerald-500"></i> Shopify
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-tiktok text-slate-900 dark:text-white"></i> TikTok Shop
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-solid fa-palette text-cyan-500"></i> Canva
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-google text-blue-500"></i> Google Workspace
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-slack text-purple-500"></i> Slack
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-solid fa-note-sticky text-slate-800 dark:text-slate-200"></i> Notion
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-trello text-blue-600"></i> Trello
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-stripe text-indigo-500"></i> Stripe
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-solid fa-code text-indigo-400"></i> VS Code
+            </span>
+
+            <!-- Duplicate Set for continuous loop -->
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-solid fa-rocket text-sky-500"></i> GoHighLevel
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-shopify text-emerald-500"></i> Shopify
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-brands fa-tiktok text-slate-900 dark:text-white"></i> TikTok Shop
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+              <i class="fa-solid fa-palette text-cyan-500"></i> Canva
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB CONTENTS / BENTO GRID VIEWS -->
+      <div id="tabContent" class="flex-1">
+
+        <!-- HOME VIEW (BENTO GRID) -->
+        <div id="view-home" class="grid grid-cols-1 md:grid-cols-12 gap-5 pb-6">
+
+          <!-- 1. PROJECTS CARD (Col 1-7, Row 1) -->
+          <div onclick="switchTab('projects')" class="md:col-span-7 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all group cursor-pointer relative overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="p-2 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400">
+                    <i class="fa-solid fa-folder-closed text-base"></i>
+                  </div>
+                  <h3 class="font-bold text-slate-900 dark:text-white text-lg">Projects</h3>
+                </div>
+                <span class="text-xs text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors">
+                  View All <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i>
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">
+                E-Commerce store builds, automated sales funnels, and brand launches.
+              </p>
+            </div>
+
+            <!-- Visual Preview Cards -->
+            <div class="grid grid-cols-2 gap-3 mt-2">
+              <div class="bg-slate-900 text-white p-3.5 rounded-2xl relative overflow-hidden border border-slate-800 group-hover:scale-[1.02] transition-transform">
+                <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider mb-1">eCommerce Store</div>
+                <div class="font-bold text-sm">GlowCosmetics Shopify Build</div>
+                <div class="text-[11px] text-slate-400 mt-1 line-clamp-1">+140% Conversion optimization</div>
+              </div>
+
+              <div class="bg-slate-50 dark:bg-slate-800 p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700 group-hover:scale-[1.02] transition-transform">
+                <div class="text-[10px] text-sky-500 font-bold uppercase tracking-wider mb-1">CRM Automation</div>
+                <div class="font-bold text-sm text-slate-800 dark:text-slate-100">GHL Lead Nurture Funnel</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Automated email/SMS sequences</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. ABOUT CARD (Col 8-12, Row 1) -->
+          <div onclick="switchTab('about')" class="md:col-span-5 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all group cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <div class="p-2 rounded-xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400">
+                  <i class="fa-solid fa-user text-base"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 dark:text-white text-lg">About</h3>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400">
+                5+ years bridging operations, digital assistant support, and marketing ops.
+              </p>
+            </div>
+
+            <!-- Stacked Photo Visual Graphic -->
+            <div class="my-6 relative h-28 flex items-center justify-center">
+              <div class="absolute w-24 h-24 rounded-2xl bg-slate-200 dark:bg-slate-700 photo-stack-1 border-2 border-white dark:border-slate-800 shadow-md flex items-center justify-center">
+                <i class="fa-solid fa-laptop text-slate-400 text-xl"></i>
+              </div>
+              <div class="absolute w-24 h-24 rounded-2xl bg-amber-100 dark:bg-amber-900/40 photo-stack-2 border-2 border-white dark:border-slate-800 shadow-md flex items-center justify-center">
+                <i class="fa-solid fa-chart-line text-amber-500 text-xl"></i>
+              </div>
+              <div class="absolute w-24 h-24 rounded-2xl bg-slate-900 text-white photo-stack-3 border-2 border-white dark:border-slate-800 shadow-lg flex flex-col items-center justify-center p-2 text-center">
+                <i class="fa-solid fa-headset text-sky-400 text-lg mb-1"></i>
+                <span class="text-[9px] font-semibold leading-tight">Virtual Specialist</span>
+              </div>
+            </div>
+
+            <div class="text-xs text-slate-600 dark:text-slate-300 font-medium text-center">
+              Passionate about turning chaotic operations into streamlined systems.
+            </div>
+          </div>
+
+          <!-- 3. AI BUILDS & WORKFLOWS CARD (Col 1-5, Row 2) -->
+          <div onclick="switchTab('showcase')" class="md:col-span-5 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all group cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <div class="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400">
+                  <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 dark:text-white text-lg">AI Builds & Automations</h3>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+                Smart automated workflows and AI-assisted client solutions.
+              </p>
+            </div>
+
+            <!-- Tags Interactive Pills Grid -->
+            <div class="grid grid-cols-2 gap-2 my-2">
+              <span class="px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/60 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-between group-hover:bg-amber-50 dark:group-hover:bg-slate-700 transition-colors">
+                <span>Zapier Bots</span> <i class="fa-solid fa-bolt text-[10px] text-amber-500"></i>
+              </span>
+              <span class="px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/60 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-between group-hover:bg-amber-50 dark:group-hover:bg-slate-700 transition-colors">
+                <span>ChatGPT Prompts</span> <i class="fa-solid fa-robot text-[10px] text-emerald-500"></i>
+              </span>
+              <span class="px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/60 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-between group-hover:bg-amber-50 dark:group-hover:bg-slate-700 transition-colors">
+                <span>Auto-responder</span> <i class="fa-solid fa-envelope text-[10px] text-sky-500"></i>
+              </span>
+              <span class="px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/60 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-between group-hover:bg-amber-50 dark:group-hover:bg-slate-700 transition-colors">
+                <span>Notion Operating System</span> <i class="fa-solid fa-database text-[10px] text-purple-500"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- 4. CREDENTIALS CARD (Col 6-7, Row 2) -->
+          <div onclick="switchTab('about')" class="md:col-span-2 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-5 shadow-sm hover:shadow-md transition-all group cursor-pointer flex flex-col justify-between items-center text-center">
+            <div class="w-full">
+              <div class="inline-flex p-2 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 mb-2">
+                <i class="fa-solid fa-award text-base"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-base">Credentials</h3>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Certified Specialist</p>
+            </div>
+
+            <!-- Seal graphic -->
+            <div class="my-3 w-16 h-16 rounded-full border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-2 shadow-inner group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-certificate text-2xl text-amber-500"></i>
+            </div>
+
+            <button class="w-full py-1.5 px-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-[11px] font-semibold">
+              View Specs
+            </button>
+          </div>
+
+          <!-- 5. SERVICES CARD (Col 8-12, Row 2) -->
+          <div onclick="switchTab('services')" class="md:col-span-5 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all group cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <div class="p-2 rounded-xl bg-orange-50 dark:bg-orange-950/60 text-orange-600 dark:text-orange-400">
+                  <i class="fa-solid fa-cubes text-base"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 dark:text-white text-lg">Services</h3>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+                What I offer to scale your eCommerce or agency operations.
+              </p>
+            </div>
+
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
+                <span class="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-[10px]"></i> eCommerce Management
+                </span>
+                <span class="text-[10px] text-slate-400">01</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
+                <span class="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-[10px]"></i> GoHighLevel Workflow Ops
+                </span>
+                <span class="text-[10px] text-slate-400">02</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
+                <span class="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-[10px]"></i> Social Media & Content Ops
+                </span>
+                <span class="text-[10px] text-slate-400">03</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
+                <span class="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-[10px]"></i> Executive Admin & Support
+                </span>
+                <span class="text-[10px] text-slate-400">04</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. TESTIMONIALS CARD (Col 1-12, Row 3) -->
+          <div onclick="switchTab('testimonials')" class="md:col-span-12 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all group cursor-pointer">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="p-2 rounded-xl bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400">
+                  <i class="fa-solid fa-quote-left text-base"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 dark:text-white text-lg">Testimonials</h3>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Client trust and feedback.</p>
+                </div>
+              </div>
+              <div class="flex gap-1 text-amber-400 text-xs">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-slate-50 dark:bg-slate-800/70 p-4 rounded-2xl border border-slate-100 dark:border-slate-700/60">
+                <div class="text-xs font-medium text-slate-700 dark:text-slate-300 italic mb-3">
+                  "Carmela completely reorganized our Shopify store and integrated GoHighLevel seamlessly. Huge lifesaver!"
+                </div>
+                <div class="font-bold text-xs text-slate-900 dark:text-white">Sarah M.</div>
+                <div class="text-[10px] text-slate-400">Founder, EcomBeauty</div>
+              </div>
+
+              <div class="bg-slate-50 dark:bg-slate-800/70 p-4 rounded-2xl border border-slate-100 dark:border-slate-700/60">
+                <div class="text-xs font-medium text-slate-700 dark:text-slate-300 italic mb-3">
+                  "Incredible attention to detail with admin tasks and customer support workflows. Highly recommended."
+                </div>
+                <div class="font-bold text-xs text-slate-900 dark:text-white">David K.</div>
+                <div class="text-[10px] text-slate-400">CEO, Digital Launch Agency</div>
+              </div>
+
+              <div class="bg-slate-50 dark:bg-slate-800/70 p-4 rounded-2xl border border-slate-100 dark:border-slate-700/60">
+                <div class="text-xs font-medium text-slate-700 dark:text-slate-300 italic mb-3">
+                  "Fast, reliable, and extremely proactive. Carmela handled all our TikTok Shop setups and product listings!"
+                </div>
+                <div class="font-bold text-xs text-slate-900 dark:text-white">Elena R.</div>
+                <div class="text-[10px] text-slate-400">Brand Director</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PROJECTS TAB VIEW (Hidden by default) -->
+        <div id="view-projects" class="hidden space-y-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Featured Projects</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">A selection of recent eCommerce setups, workflow automation builds, and store optimization projects.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Project Item 1 -->
+              <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700 flex flex-col justify-between">
+                <div>
+                  <div class="h-44 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 mb-4 p-4 flex flex-col justify-end text-white shadow-md">
+                    <span class="text-[10px] font-bold bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-md w-max mb-1">SHOPIFY & TIKTOK</span>
+                    <h4 class="font-bold text-lg">Aura Style Boutique</h4>
+                  </div>
+                  <h4 class="font-bold text-base text-slate-900 dark:text-white">Full Store Design & Sync</h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                    Designed high-converting landing pages, set up inventory sync with TikTok Shop, and integrated automated abandonment cart recovery emails.
+                  </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                  <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">+35% Conversion Rate</span>
+                  <button onclick="openModal('projectModal1')" class="text-xs font-semibold text-slate-900 dark:text-white hover:underline">View Case Study &rarr;</button>
+                </div>
+              </div>
+
+              <!-- Project Item 2 -->
+              <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700 flex flex-col justify-between">
+                <div>
+                  <div class="h-44 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 mb-4 p-4 flex flex-col justify-end text-white shadow-md">
+                    <span class="text-[10px] font-bold bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-md w-max mb-1">GOHIGHLEVEL</span>
+                    <h4 class="font-bold text-lg">ScaleAgency CRM Setup</h4>
+                  </div>
+                  <h4 class="font-bold text-base text-slate-900 dark:text-white">Lead Nurturing & Booking Engine</h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                    Custom GoHighLevel snapshot with multi-channel automated SMS & email sequences, calendar booking integration, and pipeline tracking.
+                  </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                  <span class="text-xs text-amber-600 dark:text-amber-400 font-semibold">100+ Hours Saved/mo</span>
+                  <button onclick="openModal('projectModal2')" class="text-xs font-semibold text-slate-900 dark:text-white hover:underline">View Details &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVICES TAB VIEW (Hidden by default) -->
+        <div id="view-services" class="hidden space-y-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Services & Solutions</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Tailored support to help your business operate smoother and grow faster.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+                <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold mb-3">01</div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">eCommerce Operations & Management</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">Shopify store maintenance, product listing uploading, order fulfillment tracking, inventory updates, and TikTok Shop integration.</p>
+              </div>
+
+              <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+                <div class="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold mb-3">02</div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">GoHighLevel & Workflow Automation</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">Building sales funnels, setting up automated email/SMS appointment reminders, Zapier integrations, and pipeline setup.</p>
+              </div>
+
+              <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+                <div class="w-10 h-10 rounded-xl bg-purple-500 text-white flex items-center justify-center font-bold mb-3">03</div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Social Media Strategy & Graphic Design</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">Canva graphic creation, content scheduling, short-form video repurposing, social posting, and community engagement.</p>
+              </div>
+
+              <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold mb-3">04</div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Executive Virtual Assistance</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">Calendar management, inbox zero, customer support ticket management, research, and Notion/Trello task tracking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHOWCASE TAB VIEW -->
+        <div id="view-showcase" class="hidden space-y-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Showcase & Templates</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Interactive widgets, dashboard templates, and assets designed by Carmela.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-center hover:border-sky-500 transition-colors">
+                <i class="fa-solid fa-layer-group text-3xl text-sky-500 mb-2"></i>
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Ecom Notion Dashboard</h4>
+                <p class="text-xs text-slate-500 mt-1">Organize orders, suppliers, and marketing schedules.</p>
+              </div>
+              <div class="border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-center hover:border-amber-500 transition-colors">
+                <i class="fa-solid fa-sliders text-3xl text-amber-500 mb-2"></i>
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">GHL Funnel Snapshot</h4>
+                <p class="text-xs text-slate-500 mt-1">Plug & play automated lead capture snapshot.</p>
+              </div>
+              <div class="border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-center hover:border-emerald-500 transition-colors">
+                <i class="fa-solid fa-paintbrush text-3xl text-emerald-500 mb-2"></i>
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Canva Ecom Kit</h4>
+                <p class="text-xs text-slate-500 mt-1">50+ customizable social graphics for eCommerce.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TESTIMONIALS TAB VIEW -->
+        <div id="view-testimonials" class="hidden space-y-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Client Reviews & Endorsements</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">What agency owners and founders say about working together.</p>
+
+            <div class="space-y-4">
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-slate-700 dark:text-slate-300 italic mb-3">
+                  "Carmela is one of the most proactive Virtual Assistants I've ever hired. She stepped in during our peak sales season, took over our entire customer support queue and Shopify order tracking, and executed with zero mistakes!"
+                </p>
+                <div class="font-bold text-sm text-slate-900 dark:text-white">Jessica Vance</div>
+                <div class="text-xs text-slate-400">Founder @ NovaGlow Cosmetics</div>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-slate-700 dark:text-slate-300 italic mb-3">
+                  "The GoHighLevel automations Carmela set up brought our response time down from hours to minutes. Absolutely indispensable team member."
+                </p>
+                <div class="font-bold text-sm text-slate-900 dark:text-white">Marcus Thorne</div>
+                <div class="text-xs text-slate-400">Managing Director @ Apex Media</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABOUT TAB VIEW -->
+        <div id="view-about" class="hidden space-y-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">About Carmela</h3>
+            <div class="prose dark:prose-invert text-sm text-slate-600 dark:text-slate-300 space-y-4">
+              <p>
+                Hi there! I'm <strong>Carmela Mae De Leon</strong>, an experienced Virtual Assistant and eCommerce Specialist. I specialize in taking technical and administrative burdens off busy business owners so they can focus on high-level growth.
+              </p>
+              <p>
+                Whether it's building streamlined sales pipelines on GoHighLevel, setting up product catalog automations on Shopify and TikTok Shop, or keeping your day-to-day operations organized with Notion and Slack, I make sure everything runs smoothly behind the scenes.
+              </p>
+            </div>
+
+            <!-- Certifications List -->
+            <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+              <h4 class="font-bold text-slate-900 dark:text-white text-base mb-4">Certifications & Training</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center gap-3">
+                  <i class="fa-solid fa-certificate text-sky-500 text-xl"></i>
+                  <div>
+                    <div class="font-bold text-xs text-slate-900 dark:text-white">Certified GoHighLevel Specialist</div>
+                    <div class="text-[10px] text-slate-400">Automation & Funnels</div>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center gap-3">
+                  <i class="fa-solid fa-shopping-bag text-emerald-500 text-xl"></i>
+                  <div>
+                    <div class="font-bold text-xs text-slate-900 dark:text-white">Shopify Store Admin Expert</div>
+                    <div class="text-[10px] text-slate-400">E-Commerce Management</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT / FAQS TAB VIEW -->
+        <div id="view-contact" class="hidden space-y-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">FAQs & Contact</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Frequently asked questions and direct contact form.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- FAQs -->
+              <div class="space-y-4">
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Frequently Asked Questions</h4>
+                <div class="space-y-3">
+                  <details class="group bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700">
+                    <summary class="font-semibold text-xs text-slate-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
+                      What are your availability hours?
+                      <i class="fa-solid fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">I offer full-time and part-time availability with overlapping hours for US, UK, and Australian time zones.</p>
+                  </details>
+
+                  <details class="group bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700">
+                    <summary class="font-semibold text-xs text-slate-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
+                      Do you work on fixed rate or hourly projects?
+                      <i class="fa-solid fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">Both! I offer hourly retainer options as well as fixed package pricing for specific setup projects (e.g. store builds, GHL automation setups).</p>
+                  </details>
+                </div>
+              </div>
+
+              <!-- Quick Contact Form -->
+              <div class="bg-slate-50 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                <h4 class="font-bold text-slate-900 dark:text-white text-base mb-4">Send a Message</h4>
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-3">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Your Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full text-xs px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Your Email</label>
+                    <input type="email" required placeholder="john@example.com" class="w-full text-xs px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Message</label>
+                    <textarea rows="3" required placeholder="Tell me about your project..." class="w-full text-xs px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                  </div>
+                  <button type="submit" class="w-full py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs shadow hover:opacity-90 transition-opacity">
+                    Send Message <i class="fa-solid fa-paper-plane ml-1"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODALS -->
+  <!-- Contact Modal -->
+  <div id="contactModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 max-w-md w-full border border-slate-200 dark:border-slate-800 shadow-2xl relative">
+      <button onclick="closeModal('contactModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Get In Touch</h3>
+      <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Let's discuss how I can support your business goals.</p>
+
+      <form onsubmit="handleFormSubmit(event)" class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
+          <input type="text" required placeholder="Your name" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+          <input type="email" required placeholder="your@email.com" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Project Details</label>
+          <textarea rows="3" required placeholder="How can Carmela help you?" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs shadow-md hover:opacity-90 transition-opacity">
+          Submit Inquiry
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 z-50 text-xs">
+    <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+    <span id="toastMsg">Message sent successfully!</span>
+  </div>
+
+  <script>
+    // Theme Toggle Function
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Check saved theme
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    // Tab Switcher Function
+    function switchTab(tabId) {
+      // Hide all tabs
+      const views = ['home', 'projects', 'services', 'showcase', 'testimonials', 'about', 'contact'];
+      views.forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        if (el) el.classList.add('hidden');
+
+        const navBtn = document.getElementById(`nav-${v}`);
+        if (navBtn) {
+          navBtn.className = 'nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60';
+        }
+      });
+
+      // Show targeted tab
+      const targetView = document.getElementById(`view-${tabId}`);
+      if (targetView) targetView.classList.remove('hidden');
+
+      // Highlight target nav item
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activeNav) {
+        activeNav.className = 'nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-medium text-sm transition-all bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm';
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Modal Control Functions
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Form Handling with Toast Notice
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      closeModal('contactModal');
+      
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = "Thank you! Carmela will get back to you shortly.";
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 4000);
+
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
